@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection {
+    background-color: cornflowerblue;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: 'Alkatra', cursive;
+    transition: all 0.5s;
+}
+
+.header {
+    width: 100%;
+    background-image: url('img/hero-img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+}
+
+.aside {
+    width: 40%;
+    padding: 50px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(126, 160, 151, 0.85);
+}
+
+.aside img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 40px;
+    border-radius: 50%;
+}
+
+.aside ul {
+    margin-bottom: 40px;
+    list-style: none;
+}
+
+.aside ul li {
+    padding: 5px 0;
+}
+
+.aside ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.aside ul li a:hover,
+.social-media i ion-icon:hover {
+    color: #2b2020;
+}
+
+.social-media {
+    padding: 15px 0 0;
+}
+
+.social-media i ion-icon {
+    font-size: 40px;
+    margin: 0 15px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.header-text {
+    width: 100%;
+    max-width: 66.67%;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.header-text h1 {
+    font-size: 60px;
+    color: #fff;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.header-text p {
+    padding-bottom: 40px;
+    font-size: 18px;
+    line-height: 30px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* END HEADER   */
+/* ///////////////////////////////////// */
+
+.contact-container {
+    display: flex;
+}
+
+.contact-container>div {
+    width: 100%;
+    max-width: 33.333333%;
+}
+
+.left-contact {
+    padding: 50px;
+    /* text-align: center; */
+}
+
+.left-contact h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    text-transform: capitalize;
+}
+
+.left-contact p {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 25px;
+}
+
+.left-contact p:nth-child(3) {
+    color: rgb(126, 160, 151);
+}
+
+.left-contact .btn {
+    padding: 15px 50px;
+    font-size: 20px;
+    text-transform: capitalize;
+    border: none;
+    background-color: rgb(126, 160, 151);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.left-contact .btn:hover {
+    background-color: rgba(126, 160, 151, 0.75);
+}
+
+.center-contact img {
+    width: 100%;
+    height: 100%;
+}
+
+.right-contact {
+    background-color: rgba(126, 160, 151, 0.75);
+    padding: 45px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.right-contact h1 {
+    font-size: 40px;
+}
+
+.right-contact h2 {
+    font-size: 25px;
+}
+
+.right-contact p {
+    padding: 25px 0;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+hr {
+    border: 1px solid #fff;
+}
+
+/* ///////////////////////////////////////////////// */
+/* HAMBURGER MENU */
+
+.menu-btn {
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-btn__burger {
+    width: 3.5rem;
+    height: .4rem;
+    background: #fff;
+    border-radius: .5rem;
+    transition: all .3s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 3.5rem;
+    height: .4rem;
+    background: #fff;
+    border-radius: .5rem;
+    transition: all .3s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-1rem);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(1rem);
+}
+
+/*  animation */
+
+
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+
+/* ///////////////////////////////////////// */
+
+
+.mobile-nav {
+    position: fixed;
+    padding: 30px 0;
+    width: 100%;
+    top: 120px;
+    left: 100%;
+    min-height: 100vh;
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(126, 160, 151, 0.8);
+}
+
+.mobile-nav.active {
+    left: 0;
+}
+
+.mobile-nav li {
+    width: 100%;
+    background-color: rgba(126, 160, 151);
+    list-style: none;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: all 0.9s ease;
+}
+
+.mobile-nav li:hover {
+    background-color: rgba(43, 32, 32, 0.5);
+}
+
+.mobile-nav li a {
+    padding: 20px 25px;
+    font-size: 30px;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 960px) {
+
+    .header-text h1 {
+        line-height: 70px;
+    }
+
+    .contact-container>div {
+        max-width: 100%;
+    }
+
+    .center-contact {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 760px) {
+
+    .header {
+        flex-direction: column;
+    }
+
+    .aside {
+        position: fixed;
+        width: 100%;
+        flex-direction: row;
+        padding: 10px 50px;
+    }
+
+    .aside img {
+        margin-bottom: 0;
+    }
+
+    .aside ul,
+    .social-media {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-text {
+        padding: 170px 30px 0;
+    }
+
+    .header-text h1 {
+        margin: 50px 0 20px;
+    }
+
+    .header-text p {
+        padding-bottom: 15px;
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width: 550px) {
+
+    .header-text {
+        padding: 150px 30px 0;
+        max-width: 100%;
+    }
+
+    .header-text h1 {
+        font-size: 55px;
+    }
+
+    .aside {
+        padding: 10px 25px;
+    }
+
+    .aside img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .mobile-nav {
+        top: 100px;
+    }
+
+}
