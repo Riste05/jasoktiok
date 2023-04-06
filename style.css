@@ -88,6 +88,20 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
+    animation-name: slidein;
+    animation-duration: 3s;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .header-text h1 {
@@ -119,7 +133,6 @@ body {
 
 .left-contact {
     padding: 50px;
-    /* text-align: center; */
 }
 
 .left-contact h2 {
@@ -262,7 +275,6 @@ hr {
     list-style: none;
     margin-bottom: 5px;
     cursor: pointer;
-    transition: all 0.9s ease;
 }
 
 .mobile-nav li:hover {
@@ -270,12 +282,14 @@ hr {
 }
 
 .mobile-nav li a {
-    padding: 20px 25px;
+    display: block;
+    padding: 5px 0;
     font-size: 30px;
     text-transform: capitalize;
     text-decoration: none;
     color: #ffffff;
     font-weight: 600;
+    transition: all 0.5s ease;
 }
 
 
@@ -287,7 +301,11 @@ hr {
 
 
 
-
+@media only screen and (min-width: 960px) {
+    .mobile-nav {
+        display: none;
+    }
+}
 
 @media only screen and (max-width: 960px) {
 

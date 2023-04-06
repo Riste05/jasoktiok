@@ -3,7 +3,7 @@
 const menuBurgerOpen = document.querySelector('.menu-btn');
 const mobileNav = document.querySelector('.mobile-nav');
 
-const mobileNavLi = document.querySelectorAll('.mobile-nav li');
+const anchorText = document.querySelectorAll('.mobile-nav li a');
 
 let delay = 0;
 
@@ -11,16 +11,16 @@ menuBurgerOpen.addEventListener('click', function () {
     menuBurgerOpen.classList.toggle('open');
     mobileNav.classList.toggle('active')
 
-    mobileNavLi.forEach(ele => {
+    anchorText.forEach(ele => {
         setTimeout(function () {
-            ele.style.transform = 'translateX(40%)';
-        }, 600 + delay)
+            ele.style.transform = 'translateX(43%)';
+        }, 800 + delay)
         delay += 150;
     })
 
 })
 
-
+/////////////////////////////////////////////////
 
 
 
