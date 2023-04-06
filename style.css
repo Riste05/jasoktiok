@@ -321,6 +321,23 @@ hr {
         display: none;
     }
 
+    .left-contact {
+        background-image: url('img/nail.jpg');
+        background-size: cover;
+    }
+
+    .img-background {
+        background-color: rgba(43, 32, 32, .6);
+        border-radius: 5px;
+        text-align: center;
+        padding: 15px;
+        color: #ffffff;
+    }
+
+    .left-contact p:nth-child(3) {
+        color: rgb(173, 202, 195)
+    }
+
     .mobile-nav {
         display: none;
     }
@@ -372,6 +389,10 @@ hr {
 
     .contact-container {
         flex-direction: column;
+    }
+
+    .right-contact {
+        order: -1;
     }
 
     .mobile-nav {
