@@ -13,7 +13,7 @@ menuBurgerOpen.addEventListener('click', function () {
 
     anchorText.forEach(ele => {
         setTimeout(function () {
-            ele.style.transform = 'translateX(43%)';
+            ele.style.transform = 'translateX(40%)';
         }, 800 + delay)
         delay += 150;
     })
