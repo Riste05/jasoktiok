@@ -22,6 +22,22 @@ menuBurgerOpen.addEventListener('click', function () {
 
 /////////////////////////////////////////////////
 
+const aboutContentContent = document.querySelector('.about-content_content');
+const aboutContentImg = document.querySelector('.about-content_img');
 
+ScrollReveal().reveal(aboutContentContent, {
+    origin: 'top',
+    distance: '150px',
+    duration: 2500,
+    delay: 500,
+})
 
+ScrollReveal().reveal(aboutContentImg, {
+    origin: 'bottom',
+    distance: '100px',
+    duration: 2500,
+    delay: 500,
+})
+
+/////////////////////////////////////////////////
 
