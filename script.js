@@ -24,19 +24,28 @@ menuBurgerOpen.addEventListener('click', function () {
 
 const aboutContentContent = document.querySelector('.about-content_content');
 const aboutContentImg = document.querySelector('.about-content_img');
+const asideA = document.querySelectorAll('.aside ul li');
+const socialMedia = document.querySelectorAll('.social-media');
 
-ScrollReveal().reveal(aboutContentContent, {
-    origin: 'top',
+
+ScrollReveal({
     distance: '150px',
     duration: 2500,
-    delay: 500,
+    delay: 500
 })
 
-ScrollReveal().reveal(aboutContentImg, {
+ScrollReveal().reveal(aboutContentContent, { origin: 'top', })
+ScrollReveal().reveal(aboutContentImg, { origin: 'bottom', })
+ScrollReveal().reveal(asideA, {
+    origin: 'left',
+    interval: 250,
+    delay: 0,
+    duration: 1300
+})
+ScrollReveal().reveal(socialMedia, {
     origin: 'bottom',
-    distance: '100px',
-    duration: 2500,
-    delay: 500,
+    delay: 1500
+
 })
 
 /////////////////////////////////////////////////

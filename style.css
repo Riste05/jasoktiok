@@ -24,6 +24,7 @@ body {
 
 .header {
     width: 100%;
+    min-height: 85vh;
     background-image: url('img/hero-img.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -88,7 +89,7 @@ body {
 .header-text {
     width: 100%;
     max-width: 66.67%;
-    padding: 30px;
+    padding: 10px;
 
     display: flex;
     flex-direction: column;
@@ -117,7 +118,6 @@ body {
 }
 
 .header-text p {
-    padding-bottom: 40px;
     font-size: 18px;
     line-height: 30px;
     color: #fff;
@@ -127,8 +127,56 @@ body {
 /* END HEADER   */
 /* ///////////////////////////////////// */
 
+.offer-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 100px 0 80px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.offer-picture {
+    width: 100%;
+    flex: 1 1 23%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.offer-picture img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: all 0.3s;
+}
+
+
+.offer-picture:hover img {
+    transform: scale(1.05);
+}
+
+.offer-text h2 {
+    margin-top: 15px;
+    text-transform: capitalize;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.offer-text p {
+    font-size: 18px;
+    line-height: 24px;
+    color: rgb(126, 160, 151)
+}
+
+
+
+/* END HEADER   */
+/* ///////////////////////////////////// */
+
 .about {
-    padding: 50px 10px;
+    padding: 0 10px 50px;
 }
 
 .about-container {
@@ -344,6 +392,7 @@ hr {
     min-height: 100vh;
     transition: all 0.3s ease-in-out;
     background-color: rgba(126, 160, 151, 0.8);
+    z-index: 1000;
 }
 
 .mobile-nav.active {
@@ -389,6 +438,7 @@ hr {
     }
 }
 
+
 @media only screen and (max-width: 960px) {
 
     .header-text h1 {
@@ -433,7 +483,7 @@ hr {
     }
 
     .left-contact {
-        padding: 20px;
+        padding: 10px;
     }
 
     .right-contact {
@@ -442,11 +492,7 @@ hr {
 
 }
 
-@media only screen and (max-width: 760px) {
-
-    .header {
-        flex-direction: column;
-    }
+@media only screen and (max-width: 785px) {
 
     .aside {
         position: fixed;
@@ -471,12 +517,11 @@ hr {
     }
 
     .header-text {
-        padding: 350px 30px 0;
         max-width: 88%;
     }
 
     .header-text h1 {
-        margin: 50px 0 20px;
+        margin-bottom: 20px;
     }
 
     .header-text p {
@@ -506,12 +551,19 @@ hr {
         margin-bottom: 20px;
     }
 
+    .offer-container {
+        padding: 70px 0 80px;
+    }
+
+    .offer-picture {
+        flex: 1 1 33%;
+    }
+
 }
 
 @media only screen and (max-width: 550px) {
 
     .header-text {
-        padding: 250px 10px 0;
         max-width: 100%;
     }
 
@@ -563,4 +615,7 @@ hr {
         width: 25px;
     }
 
+    .offer-picture {
+        flex: 1 1 100%;
+    }
 }
