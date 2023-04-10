@@ -13,7 +13,7 @@ menuBurgerOpen.addEventListener('click', function () {
 
     anchorText.forEach(ele => {
         setTimeout(function () {
-            ele.style.transform = 'translateX(40%)';
+            ele.style.transform = 'translateX(42%)';
         }, 800 + delay)
         delay += 150;
     })
@@ -34,18 +34,19 @@ ScrollReveal({
     delay: 500
 })
 
-ScrollReveal().reveal(aboutContentContent, { origin: 'top', })
-ScrollReveal().reveal(aboutContentImg, { origin: 'bottom', })
+ScrollReveal().reveal(aboutContentContent, { origin: 'left', })
+ScrollReveal().reveal(aboutContentImg, { origin: 'right', })
+
 ScrollReveal().reveal(asideA, {
     origin: 'left',
     interval: 250,
     delay: 0,
-    duration: 1300
+    duration: 1000
 })
 ScrollReveal().reveal(socialMedia, {
     origin: 'bottom',
-    delay: 1500
-
+    delay: 1000,
+    delay: 0
 })
 
 /////////////////////////////////////////////////
