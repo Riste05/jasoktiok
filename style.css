@@ -19,6 +19,7 @@ body {
     margin: 0 auto;
     font-size: 62.5%;
     font-family: 'Alkatra', cursive;
+    overflow-x: hidden;
     transition: all 500ms;
 }
 
@@ -34,7 +35,7 @@ body {
 .aside {
     position: relative;
     width: 40%;
-    padding: 75px 10px;
+    padding: 80px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,11 +131,18 @@ body {
     position: relative;
     width: 100%;
     /* margin: 0 auto; */
-    padding: 100px 0 80px;
+    padding: 100px 0 50px;
 
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+}
+
+.offer-container::before {
+    content: url('img/flowers2.png');
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .offer-container::after {
@@ -182,7 +190,7 @@ body {
 }
 
 .offer-text p {
-    padding: 0 10px;
+    padding: 0 10px 40px;
     font-size: 18px;
     line-height: 24px;
     color: rgb(126, 160, 151);
@@ -194,26 +202,26 @@ body {
 /* ///////////////////////////////////// */
 
 .about {
-    padding: 0 0 100px 10px;
+    position: relative;
+    padding: 30px 0 50px 10px;
+}
+
+.about::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('img/about-img.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    opacity: .65;
+    z-index: -1;
 }
 
 .about-container {
-    position: relative;
     width: 100%;
     max-width: 1250px;
     margin: 0 auto;
-
-}
-
-.about-container::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(to bottom left, rgba(126, 160, 151) 25%, #fff 65%);
-    width: 79%;
-    height: 87%;
-    z-index: -1;
 }
 
 .about-container h2 {
@@ -260,9 +268,16 @@ body {
     margin: 0 auto;
 }
 
+.about-content_content {
+    background: rgba(43, 32, 32, .6);
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px 0;
+}
+
 .about-content_content h2 {
     font-size: 50px;
-    line-height: 60px;
+    line-height: 55px;
     margin-bottom: 30px;
 }
 
@@ -277,18 +292,22 @@ body {
 
 .about-content_img img {
     width: 100%;
+    height: 100%;
 }
 
 /* END HEADER   */
 /* ///////////////////////////////////// */
 
+
 .contact-container {
     display: flex;
+
 }
 
 .contact-container>div {
     width: 100%;
-    max-width: 33.333333%;
+    /* max-width: 33.333333%; */
+    flex: 1 1 33.33333%;
 }
 
 .left-contact {
@@ -454,6 +473,69 @@ hr {
 
 /* ///////////////////////////////////////// */
 
+.banner-container {
+    margin-bottom: 100px;
+    background-image: url('img/p_5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    background-attachment: fixed;
+}
+
+.banner {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    gap: 15px;
+}
+
+.banner-text {
+    padding: 20px 0;
+    flex: 1 1 33.333%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.banner-text h1 {
+    font-size: 70px;
+}
+
+.banner-text h3 {
+    font-size: 30px;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+
+/* ///////////////////////////////////////// */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -527,13 +609,17 @@ hr {
         display: none;
     }
 
+    .banner {
+        max-width: 100%;
+    }
+
 
 }
 
 @media only screen and (max-width: 785px) {
 
     .header {
-        height: 95vh;
+        height: 90vh;
     }
 
     .aside {
@@ -541,6 +627,7 @@ hr {
         width: 100%;
         flex-direction: row;
         padding: 10px 50px;
+        box-shadow: 0 10px 10px rgba(43, 32, 32, 0.5);
     }
 
     .aside img {
@@ -594,11 +681,19 @@ hr {
     }
 
     .offer-container {
-        padding: 70px 0 80px;
+        padding: 70px 0 50px;
     }
 
     .offer-picture {
         flex: 1 1 33%;
+    }
+
+    .banner-text h1 {
+        font-size: 55px;
+    }
+
+    .banner-text h3 {
+        font-size: 20px;
     }
 
 }
@@ -659,5 +754,13 @@ hr {
 
     .offer-picture {
         flex: 1 1 100%;
+    }
+
+    .banner-text h1 {
+        font-size: 35px;
+    }
+
+    .banner-text h3 {
+        font-size: 14px;
     }
 }
