@@ -24,23 +24,42 @@ menuBurgerOpen.addEventListener('click', function () {
 const yearsOfExperience = document.querySelector('.years-of-experience');
 const happyClient = document.querySelector('.happy-client');
 
-const bannerContainer = document.querySelector('.banner-container')
+const bannerContainer = document.querySelector('.banner-container');
 
-let countYears = 0;
+const observer = new IntersectionObserver((entries, observe) => {
+    const [entry] = entries;
 
-const stopYear = setInterval(() => {
-    countYears++;
-    yearsOfExperience.textContent = `+${countYears}`;
-    if (countYears === 20) clearInterval(stopYear)
-}, 400);
+    if (entry.isIntersecting) {
+        years();
+        client();
+        observe.unobserve(bannerContainer)
+    }
 
-let countClient = 0;
+}, { threshold: 0.2 })
 
-const stopClient = setInterval(() => {
-    countClient++;
-    happyClient.textContent = `+${countClient}`;
-    if (countClient === 800) clearInterval(stopClient)
-}, 10)
+observer.observe(bannerContainer)
+
+
+function years() {
+    let countYears = 0;
+
+    const stopYear = setInterval(() => {
+        countYears++;
+        yearsOfExperience.textContent = `+${countYears}`;
+        if (countYears === 20) clearInterval(stopYear)
+    }, 400);
+}
+
+function client() {
+    let countClient = 0;
+
+    const stopClient = setInterval(() => {
+        countClient++;
+        happyClient.textContent = `+${countClient}`;
+        if (countClient === 800) clearInterval(stopClient)
+    }, 10)
+}
+
 
 /////////////////////////////////////////////////
 
@@ -75,3 +94,23 @@ ScrollReveal().reveal(socialMedia, {
 /////////////////////////////////////////////////
 
 
+const galleryImage = document.querySelectorAll('.gallery img');
+const popUpImage = document.querySelector('.pop-up-image');
+const closeGallery = document.querySelectorAll('.pop-up-image span');
+
+galleryImage.forEach((ele, i) => {
+    const imgAttr = ele.getAttribute('src');
+
+    ele.addEventListener('click', function () {
+        popUpImage.style.display = 'block';
+        document.querySelector('.pop-up-image img').src = imgAttr;
+    })
+
+
+})
+
+closeGallery.forEach(btn => {
+    btn.addEventListener('click', function () {
+        popUpImage.style.display = 'none';
+    })
+})
