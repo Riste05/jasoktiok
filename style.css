@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+:root {
+    --asideBackground: rgba(126, 160, 151, 0.85);
+    --hoverColor: hsl(0, 15%, 15%);
+}
 
 * {
     margin: 0;
@@ -40,7 +46,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(126, 160, 151, 0.85);
+    background-color: var(--asideBackground);
     z-index: 1000;
 }
 
@@ -72,7 +78,7 @@ body {
 
 .aside ul li a:hover,
 .social-media i ion-icon:hover {
-    color: #2b2020;
+    color: var(--hoverColor);
 }
 
 .social-media {
@@ -95,8 +101,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
 
-    animation-name: slidein;
-    animation-duration: 3s;
+    animation: slidein 2500ms ease;
 }
 
 @keyframes slidein {
@@ -152,7 +157,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     font-size: 530px;
-    color: rgba(126, 160, 151, .1);
+    color: rgba(126, 160, 151, .2);
     z-index: -1;
 }
 
@@ -168,8 +173,7 @@ body {
     height: 180px;
     border-radius: 50%;
     transform: scale(1);
-    outline: 10px ridge rgb(126, 160, 151);
-    box-shadow: 4px 6px 8px 5px rgba(126, 160, 151, .58);
+    outline: 10px ridge var(--asideBackground);
     transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 2.75);
 }
 
@@ -193,7 +197,7 @@ body {
     padding: 0 10px 40px;
     font-size: 18px;
     line-height: 24px;
-    color: rgb(126, 160, 151);
+    color: var(--asideBackground);
 }
 
 
@@ -203,7 +207,7 @@ body {
 
 .about {
     position: relative;
-    padding: 30px 0 50px 10px;
+    padding: 30px 0 50px;
 }
 
 .about::after {
@@ -228,6 +232,8 @@ body {
     text-align: center;
     text-transform: capitalize;
     font-size: 80px;
+    line-height: 80px;
+    margin-bottom: 20px;
 }
 
 .line {
@@ -295,6 +301,13 @@ body {
     height: 100%;
 }
 
+.change-name {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 100px;
+    color: var(--asideBackground);
+}
+
 /* END HEADER   */
 /* ///////////////////////////////////// */
 
@@ -312,6 +325,9 @@ body {
 
 .left-contact {
     padding: 50px 15px;
+    background-image: url("img/jasmine.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .left-contact h2 {
@@ -327,7 +343,7 @@ body {
 }
 
 .left-contact p:nth-child(3) {
-    color: rgb(126, 160, 151);
+    color: var(--asideBackground);
 }
 
 .left-contact .btn {
@@ -335,7 +351,7 @@ body {
     font-size: 20px;
     text-transform: capitalize;
     border: none;
-    background-color: rgb(126, 160, 151);
+    background-color: var(--asideBackground);
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
@@ -343,7 +359,7 @@ body {
 }
 
 .left-contact .btn:hover {
-    background-color: rgba(126, 160, 151, 0.75);
+    background-color: var(--hoverColor);
 }
 
 .center-contact img {
@@ -441,7 +457,7 @@ hr {
     left: 100%;
     min-height: 100vh;
     transition: all 300ms ease-in-out;
-    background-color: rgba(126, 160, 151, 0.8);
+    background-color: var(--asideBackground);
     z-index: 1000;
 }
 
@@ -450,14 +466,14 @@ hr {
 }
 
 .mobile-nav li {
-    background-color: rgba(126, 160, 151);
+    background-color: var(--asideBackground);
     list-style: none;
     margin-bottom: 5px;
     cursor: pointer;
 }
 
 .mobile-nav li:hover {
-    background-color: rgba(43, 32, 32, 0.5);
+    background-color: var(--hoverColor);
 }
 
 .mobile-nav li a {
@@ -524,9 +540,11 @@ hr {
 }
 
 .picture-gallery h2 {
+    margin-bottom: 20px;
     text-align: center;
     text-transform: capitalize;
     font-size: 80px;
+    line-height: 80px;
 }
 
 .gallery {
@@ -543,7 +561,7 @@ hr {
     cursor: pointer;
     /* outline-offset: 10px; */
     transform: scale(1);
-    transition: all 0.3s;
+    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 2.75);
 }
 
 .gallery img:hover {
@@ -587,7 +605,7 @@ hr {
 }
 
 .pop-up-image span:hover {
-    color: rgb(126, 160, 151)
+    color: var(--hoverColor);
 }
 
 .pop-up-image img {
@@ -627,6 +645,14 @@ hr {
     cursor: pointer;
 }
 
+.about-work h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 80px;
+    line-height: 80px;
+}
+
 .about-work-block::before {
     content: "";
     position: absolute;
@@ -635,8 +661,6 @@ hr {
     bottom: -20px;
     right: 0;
     transform: translateX(-20px);
-    /* background-color: #2b2020; */
-    /* background: linear-gradient(to bottom, #2b2020 35%, rgb(126, 160, 151)); */
     background: linear-gradient(to bottom, rgb(126, 160, 151) 30%, #2b2020 60%);
     opacity: 0;
     z-index: -1;
@@ -689,8 +713,8 @@ hr {
 }
 
 .about-work-left p {
-    font-size: 30px;
-    text-align: center;
+    font-size: 20px;
+    line-height: 20px;
 }
 
 .about-work-right h1 {
