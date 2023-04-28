@@ -45,7 +45,7 @@ function years() {
 
     const stopYear = setInterval(() => {
         countYears++;
-        yearsOfExperience.textContent = `+${countYears}`;
+        yearsOfExperience.textContent = `${countYears}+`;
         if (countYears === 20) clearInterval(stopYear)
     }, 400);
 }
@@ -55,7 +55,7 @@ function client() {
 
     const stopClient = setInterval(() => {
         countClient++;
-        happyClient.textContent = `+${countClient}`;
+        happyClient.textContent = `${countClient}+`;
         if (countClient === 800) clearInterval(stopClient)
     }, 10)
 }
@@ -71,8 +71,7 @@ const socialMedia = document.querySelectorAll('.social-media');
 
 ScrollReveal({
     distance: '150px',
-    duration: 2500,
-    delay: 500
+    duration: 2500
 })
 
 ScrollReveal().reveal(aboutContentContent, { origin: 'bottom', })
@@ -87,7 +86,6 @@ ScrollReveal().reveal(asideA, {
 ScrollReveal().reveal(socialMedia, {
     origin: 'bottom',
     delay: 1000,
-    delay: 0
 })
 
 
@@ -114,3 +112,23 @@ closeGallery.forEach(btn => {
         popUpImage.style.display = 'none';
     })
 })
+
+
+////////////////////////////////////
+
+$(document).ready(function () {
+    $('.carousel').carousel({
+        padding: 400,
+        numVisible: 5,
+        // noWrap: true,
+        duration: 250,
+        dist: -250,
+        // ako sakam tocki da gi klikam
+        // indicators: true,
+    });
+
+    // setInterval(function () {
+    //     $('.carousel').carousel('next')
+    // }, 3000)
+
+});
