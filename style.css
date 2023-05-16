@@ -938,6 +938,25 @@ h6 {
 /* END PERFECT SMILE */
 /* /////////////////////////////////////////////////// */
 
+.footer {
+    position: relative;
+}
+
+.footer:before {
+    content: url('img/flowers2.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.footer:after {
+    content: url('img/flowers2.png');
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotateY(180deg)
+}
+
 
 .footer-container {
     background-color: rgba(0, 0, 0, .8);
