@@ -30,8 +30,7 @@ const observer = new IntersectionObserver((entries, observe) => {
     const [entry] = entries;
 
     if (entry.isIntersecting) {
-        years();
-        client();
+        speedCounter();
         observe.unobserve(bannerContainer)
     }
 
@@ -40,24 +39,33 @@ const observer = new IntersectionObserver((entries, observe) => {
 observer.observe(bannerContainer)
 
 
-function years() {
-    let countYears = 0;
 
-    const stopYear = setInterval(() => {
-        countYears++;
-        yearsOfExperience.textContent = `${countYears}+`;
-        if (countYears === 20) clearInterval(stopYear)
-    }, 400);
-}
 
-function client() {
-    let countClient = 0;
+//////////////////////////////////////////
+// banner count
 
-    const stopClient = setInterval(() => {
-        countClient++;
-        happyClient.textContent = `${countClient}+`;
-        if (countClient === 800) clearInterval(stopClient)
-    }, 10)
+const counter = document.querySelectorAll('.counter')
+
+const speed = 20;
+
+function speedCounter() {
+
+    counter.forEach(ele => {
+        const speedTimer = () => {
+            const dataTarget = +ele.dataset.target;
+            const text = +ele.textContent;
+            let targetSpeed = dataTarget / speed;
+
+            if (text < dataTarget) {
+                ele.textContent = text + targetSpeed;
+                setTimeout(speedTimer, 200)
+            } else {
+                ele.textContent = dataTarget;
+            }
+        }
+        speedTimer();
+    })
+
 }
 
 

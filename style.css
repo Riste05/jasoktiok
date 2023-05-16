@@ -476,7 +476,7 @@ h6 {
 .picture-gallery {
     width: 100%;
     max-width: 950px;
-    margin: 0 auto 100px;
+    margin: 0 auto 50px;
 }
 
 .picture-gallery h2 {
@@ -564,7 +564,7 @@ h6 {
 /* ///////////////////////////////////////////////// */
 
 .about-work {
-    padding: 0 30px 60px;
+    padding: 80px 30px 60px;
 }
 
 .about-work-container {
@@ -829,87 +829,148 @@ h6 {
 /* END TESTIMONIALS */
 /* ///////////////////////////////////////////////// */
 
-.contact-container {
-    display: flex;
-
-}
-
-.contact-container>div {
+.custom-shape-divider-top-1682852422 {
+    position: absolute;
+    top: 100px;
+    left: 0;
     width: 100%;
-    /* max-width: 33.333333%; */
-    flex: 1 1 33.33333%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 5;
 }
 
-.left-contact {
-    padding: 50px 15px;
+.custom-shape-divider-top-1682852422 svg {
+    position: relative;
+    display: block;
+    width: calc(116% + 1.3px);
+    height: 88px;
 }
 
-.left-contact h2 {
-    margin-bottom: 10px;
-    font-size: 28px;
-    text-transform: capitalize;
+.custom-shape-divider-top-1682852422 .shape-fill {
+    fill: #fff;
 }
 
-.left-contact p {
-    font-size: 18px;
-    line-height: 25px;
-    margin-bottom: 25px;
+.feel-like_home {
+    position: relative;
+    padding: 100px 0;
 }
 
-.left-contact p:nth-child(3) {
-    color: var(--asideBackground);
-}
-
-.left-contact .btn {
-    padding: 15px 50px;
-    font-size: 20px;
-    text-transform: capitalize;
-    border: none;
-    background-color: var(--asideBackground);
+.home-banner {
+    position: relative;
     color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
+    padding: 100px 0 150px;
+    background-image: url('img/massage.jpg');
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
 }
 
-.left-contact .btn:hover {
-    background-color: var(--hoverColor);
+
+.home-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 0 0;
+    background-color: #802201;
+    background: linear-gradient(326deg, #802201 0%, #210d10 74%);
+    opacity: .6;
+    z-index: -1;
 }
 
-.center-contact img {
+.home-banner h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 100px;
+    color: var(--asideBackground)
+}
+
+.home-banner h2,
+.home-banner h3 {
+    text-transform: capitalize;
+    text-align: center;
+}
+
+
+
+.home-image {
+    display: block;
+    position: relative;
+    width: 100%;
+    /* height: 300px; */
+    max-width: 600px;
+    margin: -100px auto;
+    border: 10px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .9);
+    z-index: 1;
+}
+
+.home-image img {
     width: 100%;
     height: 100%;
 }
 
-.right-contact {
-    background-color: rgba(126, 160, 151, 0.75);
-    padding: 45px 15px;
-    text-transform: uppercase;
-    color: #ffffff;
-}
-
-.right-contact h1 {
-    font-size: 40px;
-}
-
-.right-contact h2 {
-    font-size: 25px;
-}
-
-.right-contact p {
-    padding: 25px 0;
-    font-size: 20px;
-    text-transform: capitalize;
-}
-
-hr {
-    border: 1px solid #fff;
-}
-
-
-/* END CONTACT */
+/* END HOME-BANNER */
 /* /////////////////////////////////////////////////// */
 
+.perfect-smile {
+    padding: 100px 0;
+}
+
+.container-perfect-smile {
+    border: 2px solid black;
+
+    display: flex;
+}
+
+.block {
+    flex: 1;
+    border: 2px solid black;
+}
+
+.block.active {
+    flex: 2;
+}
+
+.block h2 {
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+
+/* END PERFECT SMILE */
+/* /////////////////////////////////////////////////// */
+
+
+.footer-container {
+    background-color: rgba(0, 0, 0, .8);
+
+    text-align: center;
+    padding: 40px 0;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.footer img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.footer-contact>div {
+    display: inline-block;
+    font-size: 22px;
+    margin: 30px 45px;
+}
+
+.footer-contact>div p:nth-child(1) {
+    color: rgb(6, 247, 6);
+}
+
+
+
+
+
+
+
+/* /////////////////////////////////// */
 
 @media only screen and (min-width: 960px) {
     .mobile-nav {
@@ -1102,6 +1163,14 @@ hr {
         text-align: center;
     }
 
+    /* .home-banner {
+        padding: 100px 0 150px;
+    } */
+
+    .home-image {
+        max-width: 500px;
+    }
+
 }
 
 @media only screen and (max-width: 550px) {
@@ -1213,10 +1282,28 @@ hr {
     .client-info-name {
         text-align: left;
     }
+
+    .client-info-name h6 {
+        line-height: 40px;
+        margin-bottom: 20px;
+    }
+
+    .carousel .carousel-item {
+        max-width: 300px;
+    }
+
+    .home-banner h2 {
+        line-height: 65px;
+    }
+
+    .home-image {
+        max-width: 350px;
+    }
 }
 
-@media only screen and (max-width: 550px) {
-    .carousel .carousel-item {
+@media only screen and (max-width: 370px) {
+
+    .home-image {
         max-width: 300px;
     }
 }
